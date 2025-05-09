@@ -37,7 +37,7 @@ test:
   files:
     - testrun-sample.in
   commands:
-    - lhapdf install CT18NLO
+    - python2 $(which lhapdf-getdata) CT18NLO
     - djangoh < testrun-sample.in
 
 about:
