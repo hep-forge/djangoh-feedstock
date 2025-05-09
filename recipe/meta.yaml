@@ -27,17 +27,17 @@ requirements:
     - make
 
   host:
-    - lhapdf5
+    - lhapdf
 
   run:
-    - lhapdf5
+    - lhapdf
 
 
 test:
   files:
     - testrun-sample.in
   commands:
-    - python2 $(which lhapdf-getdata) CT18NLO
+    - lhapdf CT18NLO
     - djangoh < testrun-sample.in
 
 about:
