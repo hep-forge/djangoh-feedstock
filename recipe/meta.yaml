@@ -15,7 +15,7 @@ source:
   git_rev: {{ versions.get(version, "HEAD") }}
   patches:
     - patches/0000-patch-config-mk.patch
-    - patches/0001-patch-lhapdf5.patch
+    # - patches/0001-patch-lhapdf5.patch
 
 requirements:
   build:
