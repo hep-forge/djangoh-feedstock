@@ -37,7 +37,7 @@ test:
   files:
     - testrun-sample.in
   commands:
-    - lhapdf CT18NLO
+    - lhapdf install CT18NLO
     - djangoh < testrun-sample.in
 
 about:
