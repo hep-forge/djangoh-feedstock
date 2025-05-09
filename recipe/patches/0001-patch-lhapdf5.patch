@@ -18,8 +18,8 @@ index dae9b62..83150a7 100644
 -LIBS=-L$(LHAPDF_LIB) -lLHAPDF 	
 +LIBS=-L$(LHAPDF_LIB) -lLHAPDF5
  
- CFFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
- FCFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
+ CFFLAGS = -O -m64 -g -fno-automatic -std=legacy
+ FCFLAGS = -O -m64 -g -fno-automatic -std=legacy
 -- 
 2.47.0
 
