@@ -1,0 +1,28 @@
+From 79580cd327360a967a7c0ef1f7c16feccc92f313 Mon Sep 17 00:00:00 2001
+From: Marco Meyer-Conde <marco@tcu.ac.jp>
+Date: Fri, 9 May 2025 17:15:38 +0900
+Subject: [PATCH] patch config mk
+
+---
+ config.mk | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/config.mk b/config.mk
+index 718deae..dae9b62 100644
+--- a/config.mk
++++ b/config.mk
+@@ -13,8 +13,8 @@ PATH=${LHAPDF}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:./
+ LHAPDF_LIB=$(LHAPDF)/lib
+ LIBS=-L$(LHAPDF_LIB) -lLHAPDF 	
+ 
+-CFFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
+-FCFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
+-FGFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
++CFFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
++FCFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
++FGFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
+ 
+ INCDIR = -I$(LHAPDF)/include 
+-- 
+2.47.0
+

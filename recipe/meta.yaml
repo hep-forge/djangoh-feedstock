@@ -1,0 +1,50 @@
+{% set versions = {
+    "HEAD": "HEAD"
+} %}
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
+
+package:
+  name: {{ environ.get('ANACONDA_PACKAGE', "djangoh")|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
+
+source:
+  git_url: "https://github.com/spiesber/DJANGOH"
+  git_rev: {{ version }}
+  patches:
+    - patches/0000-patch-config-mk.patch
+    - patches/0001-patch-lhapdf5.patch
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - {{ compiler('gfortran') }}
+
+    - cmake
+    - make
+
+  host:
+    - lhapdf5
+
+  run:
+    - lhapdf5
+
+
+test:
+  files:
+    - testrun-sample.in
+  commands:
+    - lhapdf install CT18NLO
+    - djangoh < testrun-sample.in
+
+about:
+  home: "https://github.com/spiesber/DJANGOH"
+  license: "MIT"
+  summary: "DJANGOH simulates deep inelastic lepton-proton scattering for NC and CC events, including QED and QCD radiative effects"
+
+extra:
+  recipe-maintainers:
+    - meiyasan
