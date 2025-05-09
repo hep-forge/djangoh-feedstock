@@ -18,9 +18,9 @@ index 718deae..dae9b62 100644
 -CFFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
 -FCFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
 -FGFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
-+CFFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
-+FCFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
-+FGFLAGS = -O -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero -m64 -g -fno-automatic -std=legacy
++CFFLAGS = -O -m64 -g -fno-automatic -std=legacy
++FCFLAGS = -O -m64 -g -fno-automatic -std=legacy
++FGFLAGS = -O -m64 -g -fno-automatic -std=legacy
  
  INCDIR = -I$(LHAPDF)/include 
 -- 
