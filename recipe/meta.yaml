@@ -12,7 +12,7 @@ package:
 
 source:
   git_url: "https://github.com/spiesber/DJANGOH"
-  git_rev: {{ version }}
+  git_rev: {{ versions.get(version, "HEAD") }}
   patches:
     - patches/0000-patch-config-mk.patch
     - patches/0001-patch-lhapdf5.patch
