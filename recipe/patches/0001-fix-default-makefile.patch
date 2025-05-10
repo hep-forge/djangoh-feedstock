@@ -1,0 +1,27 @@
+From ed4e5ca97c383b015b5e1ee8aecbbe4b664203bc Mon Sep 17 00:00:00 2001
+From: Marco Meyer-Conde <marco@tcu.ac.jp>
+Date: Sat, 10 May 2025 11:54:38 +0900
+Subject: [PATCH] fix-default-makefile
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 6a0a477..b056fa4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -27,8 +27,8 @@ PROGRAM=djangoh
+ LHAPDF=$(LHAPDF5)
+ CERN=$(CERN_ROOT)/lib
+ 
+-LIBS=-L$(LHAPDF) -L$(LHAPDF)/lib -lLHAPDF \
+-     -L$(CERN) -lmathlib -lkernlib -lpacklib_noshift
++LIBS=-L$(LHAPDF) -L$(LHAPDF)/lib -lLHAPDF5 \
++     -L$(CERN) -lmathlib -lkernlib -lpacklib
+ 
+ 
+ OBJS = $(addsuffix .o, $(basename $(SRCS)))
+-- 
+2.34.1
+

@@ -1,5 +1,5 @@
 {% set versions = {
-    "4.6.21": "e356b847bcacf2f1596ac4ea42c677cef0614176"
+    "HEAD": "HEAD"
 } %}
 
 {% set version = environ.get('COMMIT_VERSION', None) %}
@@ -11,11 +11,10 @@ package:
   version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
 
 source:
-  git_url: "https://github.com/spiesber/DJANGOH"
+  git_url: "https://gitlab.com/eic/mceg/DJANGOH-4.6.10"
   git_rev: {{ versions.get(version, "HEAD") }}
   patches:
-    - patches/0000-patch-config-mk.patch
-    # - patches/0001-patch-lhapdf5.patch
+    - "patches/0001-fix-default-makefile.patch"
 
 requirements:
   build:
@@ -27,23 +26,16 @@ requirements:
     - make
 
   host:
-    # - lhapdf5
-    - lhapdf # LHAPDF6 by default
+    - lhapdf5
+    - lhapdf
 
   run:
-    # - lhapdf5
-    - lhapdf # LHAPDF6 by default
+    - lhapdf5
+    - lhapdf
 
-
-test:
-  files:
-    - testrun-sample.in
-  commands:
-    - lhapdf install CT18NLO
-    - djangoh < testrun-sample.in
 
 about:
-  home: "https://github.com/spiesber/DJANGOH"
+  home: "https://gitlab.com/eic/mceg/DJANGOH-4.6.10"
   license: "MIT"
   summary: "DJANGOH simulates deep inelastic lepton-proton scattering for NC and CC events, including QED and QCD radiative effects"
 
