@@ -33,7 +33,7 @@ index 718deae..0d7181d 100644
 -CFFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
 -FCFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
 -FGFLAGS = -O -Wall -pedantic -fno-automatic  -fcheck=all -g -fbacktrace -ffpe-trap=invalid,zero
-+CFFLAGS = -O -m64 -g -fno-automatic -std=legacy
++CFFLAGS = -O -m64 -g -fno-automatic -std=legacy -lgfortran -lquadmath -lm
 +FCFLAGS = -O -m64 -g -fno-automatic -std=legacy
 +FGFLAGS = -O -m64 -g -fno-automatic -std=legacy
  
