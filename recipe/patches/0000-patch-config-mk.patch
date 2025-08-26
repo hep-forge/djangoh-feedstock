@@ -21,6 +21,7 @@ index 718deae..0d7181d 100644
 +CXX    ?= gfortran
 +GFF    ?= gfortran
 +CXX    ?= gfortran
++
 
  PROGRAM=djangoh
  PATH=${LHAPDF}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:./
