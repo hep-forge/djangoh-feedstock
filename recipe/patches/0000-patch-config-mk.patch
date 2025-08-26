@@ -10,19 +10,18 @@ index 718deae..0d7181d 100644
  pwd    = ${PWD}
 -SHELL  = /bin/sh
 -AR     = ar
-+SHELL  = ${SHELL}
-+AR     = ${AR}
++SHELL  ?= /bin/sh
++AR     ?= ar
  ARFLAGS= -cr
 -CC     = gcc
 -CXX    = gfortran
 -GFF    = gfortran
 -CXX    = gfortran
-+CC     = ${CC}
-+CXX    = ${FC}
-+GFF    = ${FC}
-+CXX    = ${FC}
-+
- 
++CC     ?= gcc
++CXX    ?= gfortran
++GFF    ?= gfortran
++CXX    ?= gfortran
+
  PROGRAM=djangoh
  PATH=${LHAPDF}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:./
  
