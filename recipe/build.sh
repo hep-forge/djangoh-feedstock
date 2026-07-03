@@ -2,9 +2,10 @@
 
 export LHAPDF=$PREFIX
 
-# config.mk hardcodes -m64 (x86-only flag); aarch64 gcc rejects it
+# config.mk hardcodes x86-only bits: -m64 (rejected by aarch64 gcc)
+# and -lquadmath (libquadmath does not exist on aarch64)
 if [ "$(uname -m)" != "x86_64" ]; then
-    sed -i 's/ -m64//g' config.mk
+    sed -i 's/ -m64//g; s/ -lquadmath//g' config.mk
 fi
 
 make -f Makefile-sample
