@@ -15,8 +15,8 @@ DJANGOH simulates deep inelastic lepton-proton scattering for NC and CC events, 
 
 | Architecture | Latest published |
 |--------------|------------------|
-| linux-amd64 (`linux-64`) | ❌ not published |
-| linux-arm64 (`linux-aarch64`) | ❌ not published |
+| linux-amd64 (`linux-64`) | ✅ `4.6.21` |
+| linux-arm64 (`linux-aarch64`) | ✅ `4.6.21` |
 
 _As of the last feedstock render; the badges above are live._
 
