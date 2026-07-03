@@ -1,5 +1,6 @@
 # djangoh-feedstock
 
+[![hep-forge](https://img.shields.io/badge/package-hep--forge%2Fdjangoh-orange.svg)](https://anaconda.org/hep-forge/djangoh)
 [![Build & Upload](https://github.com/hep-forge/djangoh-feedstock/actions/workflows/autoupload.yml/badge.svg)](https://github.com/hep-forge/djangoh-feedstock/actions/workflows/autoupload.yml)
 [![Anaconda Version](https://anaconda.org/hep-forge/djangoh/badges/version.svg)](https://anaconda.org/hep-forge/djangoh)
 [![Anaconda Platforms](https://anaconda.org/hep-forge/djangoh/badges/platforms.svg)](https://anaconda.org/hep-forge/djangoh)
@@ -9,6 +10,16 @@ Builds linux-amd64 + linux-arm64 in one matrix workflow and uploads to the
 [hep-forge](https://anaconda.org/hep-forge) Anaconda channel.
 
 DJANGOH simulates deep inelastic lepton-proton scattering for NC and CC events, including QED and QCD radiative effects
+
+## Architectures
+
+| Architecture | Latest published |
+|--------------|------------------|
+| linux-amd64 (`linux-64`) | ❌ not published |
+| linux-arm64 (`linux-aarch64`) | ❌ not published |
+
+_As of the last feedstock render; the badges above are live._
+
 
 ## Install
 
