@@ -14,6 +14,11 @@ fi
 # whatever gfortran happens to be on PATH on Linux otherwise. Override
 # on the command line so conda's own $FC wins everywhere.
 #
+# The config.mk patch links with -Wl,-rpath-link, which only GNU ld knows.
+if [ "$(uname)" = "Darwin" ]; then
+    sed -i.bak 's/ -Wl,-rpath-link,"$(PREFIX)\/lib"//' config.mk
+fi
+#
 # config.mk also sets PATH=${LHAPDF}/bin:/bin:/usr/bin:..., which drops the
 # build env's tools. gfortran on macOS runs `clang` from there; pass the real
 # PATH so the makefile's assignment does not win.
