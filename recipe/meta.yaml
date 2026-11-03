@@ -22,6 +22,9 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
+    # the Makefile builds everything through gfortran, which on macOS runs a
+    # bare `clang` that the compiler packages do not put on PATH
+    - clang  # [osx]
 
     - cmake
     - make
