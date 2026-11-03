@@ -13,5 +13,9 @@ fi
 # nothing on macOS (conda's gfortran is target-triple-prefixed) and to
 # whatever gfortran happens to be on PATH on Linux otherwise. Override
 # on the command line so conda's own $FC wins everywhere.
-make -f Makefile-sample CXX="${FC}"
+#
+# config.mk also sets PATH=${LHAPDF}/bin:/bin:/usr/bin:..., which drops the
+# build env's tools. gfortran on macOS runs `clang` from there; pass the real
+# PATH so the makefile's assignment does not win.
+make -f Makefile-sample CXX="${FC}" PATH="${PATH}"
 mv djangoh $PREFIX/bin
